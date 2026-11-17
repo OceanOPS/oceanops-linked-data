@@ -5,10 +5,71 @@
     "oso": "https://w3id.org/earthsemantics/OSO#",
     "sosa": "http://www.w3.org/ns/sosa/",
     "ssn": "http://www.w3.org/ns/ssn/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "identification": "@nest",
+    "status": "@nest",
+    "operations": "@nest",
+    "hardware": "@nest",
+    "platform": "@nest",
 
     "name": "schema:name",
     "description": "schema:description",
-    "identifier": "schema:identifier",
+    "passportId": "schema:identifier",
+
+    "reportingStatus": {
+      "@id": "oso:hasStatus",
+      "@context": {
+        "wmoCode": "@id",
+        "id": null,
+        "code": null,
+        "name": null
+      }
+    },
+    "latestObservation": {
+      "@reverse": "schema:observationAbout",
+      "@context": {
+        "timestamp": {"@id": "schema:observationDate", "@type": "xsd:dateTime"},
+        "latitude": null,
+        "longitude": null
+      }
+    },
+
+    "deployment": {
+      "@id": "prov:qualifiedStart",
+      "@context": {
+        "timestamp": {"@id": "prov:atTime", "@type": "xsd:dateTime"},
+        "latitude": null,
+        "longitude": null,
+        "ship": null
+      }
+    },
+    "retrieval": {
+      "@id": "prov:qualifiedEnd",
+      "@context": {
+        "timestamp": {"@id": "prov:atTime", "@type": "xsd:dateTime"},
+        "latitude": null,
+        "longitude": null,
+        "ship": null
+      }
+    },
+    "asset": {
+      "@id": "ssn:deployedOnPlatform",
+      "@context": {
+        "id": null,
+        "wmo": null,
+        "name": "schema:name",
+        "model": null,
+        "serial": null,
+        "status": null,
+        "endTimestamp": null,
+        "manufacturer": null
+      }
+    },
+
+    "prov:startedAtTime": {"@id": "prov:startedAtTime", "@type": "xsd:dateTime"},
+    "prov:endedAtTime": {"@id": "prov:endedAtTime", "@type": "xsd:dateTime"},
 
     "linkedTerms": {"@id": "schema:additionalProperty", "@container": "@set"},
     "propertyID": "schema:propertyID",
