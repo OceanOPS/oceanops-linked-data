@@ -1,1 +1,15 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "oso": "https://w3id.org/earthsemantics/OSO#",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "identifier": "schema:identifier",
+    "linkedTerms": {"@id": "schema:additionalProperty", "@container": "@set"},
+    "propertyID": "schema:propertyID",
+    "valueReference": {"@id": "schema:valueReference", "@type": "@id"}
+  }
+}
 
